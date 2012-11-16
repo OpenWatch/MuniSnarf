@@ -78,13 +78,14 @@ def item_in_db(zip, org):
     except Exception, e:
         return False
 
-def add_event(result):
+def add_item(result):
     if result['target']:
-        target = result['target']['angellist_url']
+        target = result['target']['url']
     else:
         target = "No target"
 
-    e = Muni.create(    zip   = result['zip']
+    e = Muni.create(    
+                    zip = result['zip']
                     )
     return e
 
