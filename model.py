@@ -38,10 +38,9 @@ class Muni(BaseModel):
     last_modified = DateTimeField()
 
 class Location(models.Model):
-    zipcode = models.IntegerField()
+    zip_code = models.IntegerField()
     lat = models.FloatField()
     lon = models.FloatField()
     city = models.CharField() 
     state = models.CharField()
     state_code = models.CharField()
-    zipcode_string = models.CharField()

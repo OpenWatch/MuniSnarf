@@ -53,8 +53,7 @@ def zipit():
             continue
 
         l = Location()
-        l.zipcode = row[0]
-        l.zipcode_string = row[0]
+        l.zip_code = row[0]
         l.city = slugify(row[2])
         l.state_code = row[3]
         l.state = slugify(code_to_state[row[3]])
@@ -71,9 +70,9 @@ def zipit():
 def scrape():
     continue
 
-def item_in_db(zip, org):
+def item_in_db(zip_code, org):
     try:
-        Muni.get(Muni.zip == id, Muni.org == org)
+        Muni.get(Muni.zip_code == id, Muni.org == org)
         return True
     except Exception, e:
         return False
@@ -85,7 +84,7 @@ def add_item(result):
         target = "No target"
 
     e = Muni.create(    
-                    zip = result['zip']
+                    zip = result['zip_code']
                     )
     return e
 
