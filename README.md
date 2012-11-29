@@ -5,6 +5,10 @@
 
 Take a bunch of municipal data from the web and throw it in a database.
 
+# Req
+
+python-google-places
+
 ## TODO
 
 * Hook it all up

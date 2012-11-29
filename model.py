@@ -10,8 +10,8 @@ class BaseModel(Model):
 class Muni(BaseModel):
 
     # Meta information
-    verified = BooleanFalse(default=False) # Has this been human-checked?
-    success = BooleanFalse(default=False) # Was the scrape a success?
+    verified = BooleanField(default=False) # Has this been human-checked?
+    success = BooleanField(default=False) # Was the scrape a success?
 
     # ex: 'police', 'fire', 'city hall', 'newspaper', 'tv station', 'hospital'
     org = CharField()
@@ -30,6 +30,7 @@ class Muni(BaseModel):
     # Contact information
     title = CharField()
     tel = CharField()
+    international_tel = CharField()
     url = CharField()
     email = CharField()
 
@@ -37,10 +38,10 @@ class Muni(BaseModel):
     date_created = DateTimeField()
     last_modified = DateTimeField()
 
-class Location(models.Model):
-    zip_code = models.IntegerField()
-    lat = models.FloatField()
-    lon = models.FloatField()
-    city = models.CharField() 
-    state = models.CharField()
-    state_code = models.CharField()
+class Location(BaseModel):
+    zip_code = IntegerField()
+    lat = FloatField()
+    lon = FloatField()
+    city = CharField() 
+    state = CharField()
+    state_code = CharField()
