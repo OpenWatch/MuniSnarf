@@ -17,22 +17,22 @@ class Muni(BaseModel):
     org = CharField()
 
     # Location information
-    country = CharField()       
-    state = CharField()
-    state_code = CharField()     
-    county = CharField()
-    city = CharField()
-    zip_code = FloatField()
+    country = CharField(null=True)       
+    state = CharField(null=True)
+    state_code = CharField(null=True)     
+    city = CharField(null=True)
+    zip_code = FloatField(null=True)
+    zip_code_string = CharField(null=True)
     lat = FloatField()
     lon = FloatField()
-    address = CharField()
+    address = CharField(null=True)
 
     # Contact information
-    title = CharField()
-    tel = CharField()
-    international_tel = CharField()
-    url = CharField()
-    email = CharField()
+    title = CharField(null=True)
+    tel = CharField(null=True)
+    international_tel = CharField(null=True)
+    url = CharField(null=True)
+    email = CharField(null=True)
 
     # Scrape info
     date_created = DateTimeField()
@@ -40,8 +40,10 @@ class Muni(BaseModel):
 
 class Location(BaseModel):
     zip_code = IntegerField()
+    zip_code_string = CharField()
     lat = FloatField()
     lon = FloatField()
     city = CharField() 
     state = CharField()
     state_code = CharField()
+
