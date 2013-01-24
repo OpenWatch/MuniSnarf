@@ -11,7 +11,4 @@ python-google-places
 
 ## TODO
 
-* Hook it all up
-* GPlaces integration
-* Cronify
 * Build API + Verifier
